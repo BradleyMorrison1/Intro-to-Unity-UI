@@ -1,18 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public TMP_Text scoreText;
+    public Slider scoreModSlider;
 
-    // Update is called once per frame
+    public float score;
+    public float scoreModifier = 1;
+
     void Update()
     {
-        
+        scoreText.text = ("Score | " + Mathf.Round(score).ToString());
+        scoreModifier = scoreModSlider.value;
+    }
+
+
+    public void IncreaseScore()
+    {
+        score += 1 * scoreModifier;
     }
 }
