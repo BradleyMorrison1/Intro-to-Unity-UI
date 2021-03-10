@@ -23,4 +23,10 @@ public class UIManager : MonoBehaviour
     {
         score += 1 * scoreModifier;
     }
+
+    public void Exit()
+    {
+        Debug.Log("Quitting");
+        Application.Quit();
+    }
 }
